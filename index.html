@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MattaForex</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/main_style.css" />
+    <script src="/Assets/js/script.js"></script>
+  </head>
+  <body>
+    <!-- page loader start  -->
+    <div class="page-loader">
+      <div class="spinner"></div>
+      <div class="txt">MattaForex</div>
+    </div>
+
+    <!-- page loader end -->
+
+    <!-- main content starts -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-auto px-0 aside-navbar">
+          <div id="sidebar" class="collapse collapse-horizontal show">
+            <div
+              id="sidebar-nav"
+              class="list-group border-0 rounded-0 text-sm-start min-vh-100"
+            >
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="logo">
+                  <a href="index.html">
+                    <img
+                      src="/Assets/images/logo-light.png"
+                      alt="company-logo"
+                    />
+                  </a>
+                </div>
+                <div class="username-profile">
+                  <img
+                    class="user"
+                    id="user-profile"
+                    src="/Assets/images/user.png"
+                    alt="profile-img"
+                  />
+                  <span id="username">Username</span>
+                </div>
+                <hr class="division" />
+
+                <div class="accordion-item">
+                  <a href="index.html">
+                    <button class="button" type="button">
+                      <i class="fa-solid fa-gauge-high"></i>Dashboard
+                    </button>
+                  </a>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#profile"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      <i class="fa-solid fa-user"></i> Profile
+                    </button>
+                  </h2>
+                  <div
+                    id="profile"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <a href="#" onclick="loadContent('viewProfile')"
+                            >View Profile</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('changePassword')"
+                            >Change Password</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('walletAddress')"
+                            >Wallet Address</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#my-network"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      <i class="fa-solid fa-handshake"></i> My Network
+                    </button>
+                  </h2>
+                  <div
+                    id="my-network"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <a href="#" onclick="loadContent('directTeam')"
+                            >Direct Team</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('downlineTeam')"
+                            >Downline Team</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('treeView')"
+                            >Tree View</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#top-up"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      <i class="fa-solid fa-keyboard"></i>Top Up
+                    </button>
+                  </h2>
+                  <div
+                    id="top-up"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <a href="#" onclick="loadContent('topUp')">Topup</a>
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('topupHistory')"
+                            >Topup History</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#fund"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      <i class="fa-solid fa-landmark"></i>Fund
+                    </button>
+                  </h2>
+                  <div
+                    id="fund"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <a href="#" onclick="loadContent('fundRequest')"
+                            >Fund Request</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onclick="loadContent('fundRequestHistory')"
+                            >Fund Request History</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('fundTransfer')"
+                            >Fund Transfer</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onclick="loadContent('fundTransferHistory')"
+                            >Fund Transfer History</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            onclick="loadContent('fundRecieveHistory')"
+                            >Fund Received History</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('fundWallet')"
+                            >Main to fund Wallet</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('fundHistory')"
+                            >Main to fund History</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#my-income"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      <i class="fa-solid fa-credit-card"></i> My Income
+                    </button>
+                  </h2>
+                  <div
+                    id="my-income"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <a href="#" onclick="loadContent('directIncome')"
+                            >Direct Income</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('cashbackIncome')"
+                            >Cashback Income</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('matchingIncome')"
+                            >Matching Income</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('closingIncome')"
+                            >Matching Closing Income</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('awardReward')"
+                            >Award and Reward</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('clubIncome')"
+                            >CMC Club Income</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#withdrawal"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      <i class="fa-solid fa-sack-dollar"></i> Withdrawal
+                    </button>
+                  </h2>
+                  <div
+                    id="withdrawal"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <ul>
+                        <li>
+                          <a href="#" onclick="loadContent('withdrawal')"
+                            >Withdrawal</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" onclick="loadContent('withdrawalHistory')"
+                            >Withdrawal History</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <a href="signin.html">
+                    <button id="logout-btn" class="button" type="button">
+                      <i class="fa-solid fa-right-from-bracket"></i>Log Out
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <main class="col p-0">
+          <nav class="navbar d-flex justify-content-space-between sticky-top">
+            <a
+              href="#"
+              data-bs-target="#sidebar"
+              data-bs-toggle="collapse"
+              class="menu-icon text-decoration-none"
+            >
+              <i class="fa-solid fa-bars menu-icon"></i>
+            </a>
+            <span class="username-dropdown">
+              <img
+                src="/Assets/images/user.png"
+                id="user-profile"
+                alt="profile-img"
+              />
+              <span class="d-none d-lg-block" id="username">Username</span>
+              <div class="dropdown">
+                <button
+                  class="btn"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-caret-down down-arrow"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    onclick="loadContent('viewProfile')"
+                    >My Profile</a
+                  >
+                  <a href="signin.html" class="dropdown-item">Log Out</a>
+                </div>
+              </div>
+            </span>
+          </nav>
+
+          <section id="main-content">
+            <div class="section-box">
+              <h3>Welcome To Matta Forex</h3>
+
+              <div class="referel-link">
+                <p>
+                  Left Referral link :
+                  <span id="left-link">
+                    mattaforex.com/signup.asp?code=mattaforex&place=L</span
+                  >
+                  <button
+                    id="btn-left-link"
+                    onclick="CopyLeftURL()"
+                    class="btn"
+                  >
+                    Copy Link
+                  </button>
+                </p>
+                <p>
+                  Right Referral link :
+                  <span id="right-link">
+                    mattaforex.com/signup.asp?code=mattaforex&place=R</span
+                  >
+                  <button
+                    id="btn-right-link"
+                    onclick="CopyRightURL()"
+                    class="btn"
+                  >
+                    Copy Link
+                  </button>
+                </p>
+              </div>
+
+              <div class="wrapper-content">
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p id="package">My Package<span id="price">$ 50</span></p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <p id="package">Direct Team<span id="price">47</span></p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-area"></i>
+                    <p id="package">
+                      Direct Business<span id="price">$ 27300</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <p id="package">
+                      Total Team Business<span id="price">28300</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <p id="package">
+                      Total Left Business<span id="price">28300</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p id="package">
+                      Total Right Business<span id="price">0</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <p id="package">
+                      Cashback Income<span id="price"
+                        >$ 2.75 / 354 days Left</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <p id="package">
+                      Direct Income<span id="price">$ 65</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p id="package">
+                      Matching Income<span id="price">$ 0</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <p id="package">
+                      Total Income<span id="price">$ 809</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <p id="package">
+                      Wallet Balance<span id="price">$ 809</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <p id="package">
+                      Total Withdrawal<span id="price">$ 0</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="outer-div">
+                  <div class="inner-div">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <p id="package">
+                      CMC club Fund <br />
+                      monday to monday distributed<span id="price">$ 0</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row detail-content p-0">
+                <div class="col-lg">
+                  <h5>User Deatils</h5>
+                  <div class="user-details">
+                    <table class="w-100">
+                      <tbody>
+                        <tr>
+                          <th>Name</th>
+                          <td id="name">mattaforex</td>
+                        </tr>
+                        <tr>
+                          <th>Email ID</th>
+                          <td id="email">support@mattaforex</td>
+                        </tr>
+                        <tr>
+                          <th>Mobile</th>
+                          <td id="mobile">0000000000</td>
+                        </tr>
+                        <tr>
+                          <th>Joining Date</th>
+                          <td id="joiningDate">7/4/2023</td>
+                        </tr>
+                        <tr>
+                          <th>Activation Date</th>
+                          <td id="activationDate">Apr 19 2024 8:27PM</td>
+                        </tr>
+                        <tr>
+                          <th>Sponsor ID</th>
+                          <td id="sponserId"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-lg">
+                  <h5>CMC Achivers</h5>
+                  <div class="cmc-archiver">
+                    <marquee width="100%" direction="up" height="50px">
+                      mattaforex
+                    </marquee>
+                  </div>
+                </div>
+              </div>
+
+              <footer><span>© Mattaforex </span>, All Right Reserved.</footer>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

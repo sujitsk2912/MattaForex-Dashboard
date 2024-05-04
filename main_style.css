@@ -545,8 +545,8 @@ table td {
   border-bottom: 1px solid #fff;
 }
 
-.link-selected {
-  color: red !important;
+.link-selected:focus-within {
+  color: rgb(74, 234, 242) !important;
 }
 @media (max-width: 468px) {
   .navbar {

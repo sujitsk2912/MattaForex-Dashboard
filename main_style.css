@@ -545,6 +545,9 @@ table td {
   border-bottom: 1px solid #fff;
 }
 
+.link-selected {
+  color: red !important;
+}
 @media (max-width: 468px) {
   .navbar {
     flex-wrap: nowrap;

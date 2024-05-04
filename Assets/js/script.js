@@ -11,8 +11,10 @@ function CopyRightURL() {
 }
 
 function loadContent(section) {
+  const Link = document.getElementById(section);
+  Link.classList.add("link-selected");
+
   const mainContent = document.getElementById("main-content");
-  console.log(section);
   fetch(`/Dashboard/${section}.html`)
     .then((response) => response.text())
     .then((html) => {

@@ -253,6 +253,11 @@ main .navbar {
   cursor: pointer;
 }
 
+.username-dropdown .username:hover {
+  color: rgb(74, 234, 242);
+  transition: all 0.2s ease-in-out;
+}
+
 .down-arrow {
   color: #fff;
 }
